@@ -5,7 +5,7 @@ from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 import copy
 
-doc = Document("Reinforcement_Learning_project template.docx")
+doc = Document("deliverables/Reinforcement_Learning_Project_Template.docx")
 
 # --- Fill in cover page info ---
 for i, p in enumerate(doc.paragraphs):
@@ -215,6 +215,6 @@ for block_type, text in reversed(content_blocks):
         p = doc.add_paragraph(text)
         anchor._element.addnext(p._element)
 
-output_path = "Reinforcement_Learning_Project_Week1.docx"
+output_path = "deliverables/Reinforcement_Learning_Project_Week1.docx"
 doc.save(output_path)
 print(f"Saved to {output_path}")

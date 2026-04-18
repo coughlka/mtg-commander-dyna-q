@@ -17,25 +17,33 @@ Can a model-based RL agent learn to construct competitive Commander decks from a
 - **Reward:** Intermediate shaping rewards during the episode plus a terminal reward from the `/synergy/analyze-deck` API endpoint
 - **Constraints:** Singleton, color identity, and collection-bound, enforced via action masking
 
-See [week1_rl_formulation.md](week1_rl_formulation.md) for the full RL formulation.
+See [docs/week1_rl_formulation.md](docs/week1_rl_formulation.md) for the full RL formulation.
 
 ## Repository Layout
 
 ```
 .
-├── mtg_commander_dyna_q.ipynb    # Main notebook (all modules + training + eval)
-├── mtg_commander_dyna_q.html     # Rendered notebook (HTML)
-├── mtg_commander_dyna_q.pdf      # Rendered notebook (PDF)
-├── week1_rl_formulation.md       # Week 1 deliverable, RL formulation writeup
-├── populate_template.py          # Helper script to populate the course .docx template
-├── Reinforcement_Learning_project template.docx
-├── Reinforcement_Learning_Project_Week1.docx
-├── Assignment_4_Results.docx
-├── Assignment_4_5_Results.docx
-├── RL Project Writeup.docx
-├── CLAUDE.md                     # Instructions for Claude Code
-└── cache/                        # (gitignored) API responses, enriched collection, checkpoints, plots
+├── README.md
+├── CLAUDE.md                              # Instructions for Claude Code
+├── mtg_commander_dyna_q.ipynb             # Main notebook (all modules + training + eval)
+├── docs/
+│   └── week1_rl_formulation.md            # Week 1 deliverable, RL formulation writeup
+├── exports/                               # Rendered copies of the notebook
+│   ├── mtg_commander_dyna_q.html
+│   ├── mtg_commander_dyna_q.pdf
+│   └── mtg_commander_dyna_q_executed.ipynb
+├── deliverables/                          # Course-submission .docx files
+│   ├── Reinforcement_Learning_Project_Template.docx
+│   ├── Reinforcement_Learning_Project_Week1.docx
+│   ├── Assignment_4_Results.docx
+│   ├── Assignment_4_5_Results.docx
+│   └── RL_Project_Writeup.docx
+├── scripts/
+│   └── populate_template.py               # Helper to populate the course .docx template
+└── cache/                                 # (gitignored) API responses, checkpoints, plots
 ```
+
+The notebook stays at the repo root because it loads cached data from a hard-coded `./cache` relative path. Run the notebook with the repo root as your working directory.
 
 ## Cache Directory
 

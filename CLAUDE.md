@@ -6,13 +6,26 @@ Guidance for Claude Code when working in this repo.
 
 Penn State MSAI reinforcement learning course project. A tabular Dyna-Q agent that builds 100-card MTG Commander decks from a real, constrained collection. Deliverables are weekly, and the final submission is a single Jupyter notebook plus a course-template `.docx` writeup.
 
-The full RL formulation lives in [week1_rl_formulation.md](week1_rl_formulation.md). Read it before making non-trivial changes to state, action, or reward design.
+The full RL formulation lives in [docs/week1_rl_formulation.md](docs/week1_rl_formulation.md). Read it before making non-trivial changes to state, action, or reward design.
+
+## Repo layout
+
+```
+mtg_commander_dyna_q.ipynb   # all implementation lives here
+docs/                        # writeups (week1_rl_formulation.md, etc.)
+exports/                     # rendered notebook copies (.html, .pdf, _executed.ipynb)
+deliverables/                # course .docx submissions
+scripts/                     # one-off helpers (populate_template.py)
+cache/                       # gitignored, ~500MB of regenerable data
+```
+
+The notebook reads cache from `./cache` (hard-coded relative path), so it must be run with the repo root as CWD. Do not move `mtg_commander_dyna_q.ipynb` without updating `CACHE_DIR`.
 
 ## Where the code lives
 
 All implementation lives in `mtg_commander_dyna_q.ipynb`. There are no separate `.py` modules for agent, env, reward, etc. When the user asks to change module behavior, the change goes in a notebook cell.
 
-`populate_template.py` is a one-off helper that fills the course `.docx` template with Week 1 content. It is not part of the RL pipeline.
+`scripts/populate_template.py` is a one-off helper that fills the course `.docx` template with Week 1 content. It is not part of the RL pipeline.
 
 ## Cache directory
 
@@ -36,7 +49,7 @@ Training episodes must not call the API. The API is hit once during setup to bui
 
 ## Course deliverables
 
-The notebook is the source of truth for code. Results get exported to rendered copies (`.html`, `.pdf`, `_executed.ipynb`) and summarized into the course `.docx` files (`Assignment_4_Results.docx`, `Assignment_4_5_Results.docx`, `RL Project Writeup.docx`). When updating results, regenerate the rendered notebook copies alongside the `.ipynb`.
+The notebook is the source of truth for code. Results get exported to `exports/` (`.html`, `.pdf`, `_executed.ipynb`) and summarized into `deliverables/` (`Assignment_4_Results.docx`, `Assignment_4_5_Results.docx`, `RL_Project_Writeup.docx`). When updating results, regenerate the rendered notebook copies in `exports/` alongside the `.ipynb`.
 
 ## Writing style
 
