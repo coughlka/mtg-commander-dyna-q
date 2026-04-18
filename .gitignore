@@ -38,6 +38,9 @@ Thumbs.db
 *.key
 credentials.json
 
+# Claude Code instructions (local only)
+CLAUDE.md
+
 # Pickles and checkpoints at repo root (training artifacts)
 *.pkl
 !requirements*.pkl
