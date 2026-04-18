@@ -16,7 +16,7 @@ for i, p in enumerate(doc.paragraphs):
         run.bold = True
     elif p.text == "Student name and email":
         p.clear()
-        run = p.add_run("Keith Coughlin — krc5765@psu.edu")
+        run = p.add_run("Keith Coughlin, kac7102@psu.edu")
         run.font.size = Pt(12)
     elif p.text == "Month, Year":
         p.clear()
@@ -26,7 +26,7 @@ for i, p in enumerate(doc.paragraphs):
 # --- Fill in Document Control table ---
 table0 = doc.tables[0]
 table0.rows[1].cells[0].text = "Keith Coughlin"
-table0.rows[1].cells[1].text = "krc5765@psu.edu"
+table0.rows[1].cells[1].text = "kac7102@psu.edu"
 table0.rows[1].cells[2].text = "Author"
 
 # Revision table
