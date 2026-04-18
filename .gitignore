@@ -41,6 +41,9 @@ credentials.json
 # Claude Code instructions (local only)
 CLAUDE.md
 
+# Build artifacts (zipped submission, regenerated on demand)
+Keith_Coughlin_RL_Project.zip
+
 # Pickles and checkpoints at repo root (training artifacts)
 *.pkl
 !requirements*.pkl
